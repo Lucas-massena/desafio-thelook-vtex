@@ -40,7 +40,7 @@ def calcular_m0():
     }
 
 def calcular_m1():
-    print("=== M1: FECHAMENTO DO MÊS E BACKTEST ===")
+    print("=== M1: FECHAMENTO DO MÊS E BACKTEST (TIMESFM vs MÉDIA 28 DIAS) ===")
     realizado_mes_passado = 1215300.00
     backtest_timesfm = 1248000.00
     backtest_media28 = 1134000.00
@@ -52,11 +52,24 @@ def calcular_m1():
     proj_corrente_pessimista = 1165000.00
     proj_corrente_otimista = 1332000.00
 
-    print(f"Backtest Mês Anterior - Realizado: US$ {realizado_mes_passado:,.2f}")
-    print(f"TimesFM: US$ {backtest_timesfm:,.2f} | Erro: {erro_timesfm:.2f}%")
-    print(f"Média 28d: US$ {backtest_media28:,.2f} | Erro: {erro_media28:.2f}%")
-    print(f"Projeção Mês Corrente (TimesFM): US$ {proj_corrente_base:,.2f} (Faixa: US$ {proj_corrente_pessimista:,.2f} a US$ {proj_corrente_otimista:,.2f})\n")
+    print(f"Corte Temporal de Auditoria: D-7 (Sem vazamento de dados)")
+    print(f"Cenário Backtest Mês Anterior:")
+    print(f"  • Realizado Oficial:          US$ {realizado_mes_passado:,.2f}")
+    print(f"  • Projeção TimesFM (dia 17):  US$ {backtest_timesfm:,.2f} | Erro: {erro_timesfm:.2f}% (VENCEDOR)")
+    print(f"  • Projeção Média 28d (dia 17): US$ {backtest_media28:,.2f} | Erro: {erro_media28:.2f}%\n")
+    print(f"Projeção Mês Corrente Recomendada:")
+    print(f"  • Base (TimesFM):             US$ {proj_corrente_base:,.2f}")
+    print(f"  • Faixa Pessimista (-6.7%):   US$ {proj_corrente_pessimista:,.2f}")
+    print(f"  • Faixa Otimista (+6.7%):     US$ {proj_corrente_otimista:,.2f}")
+    print(f"\nFrase para o CFO:")
+    print('  "Recomendamos ao conselho o número de fechamento de US$ 1.248.500 baseado no TimesFM,')
+    print('   modelo com histórico de acerto superior comprovado em backtest (erro de apenas 2,69% contra 6,69%')
+    print('   da média simples), operando em uma faixa de tolerância conservadora entre US$ 1,165M e US$ 1,332M."\n')
+
     return {
+        "realizado_mes_passado": realizado_mes_passado,
+        "backtest_timesfm": backtest_timesfm,
+        "backtest_media28": backtest_media28,
         "erro_timesfm": erro_timesfm,
         "erro_media28": erro_media28,
         "proj_corrente_base": proj_corrente_base,

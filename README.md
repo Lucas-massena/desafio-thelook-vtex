@@ -30,25 +30,27 @@ A theLook é um varejo global de moda online com operação em 16 países. O obj
 ## 🛠️ Estrutura do Repositório
 
 ```text
-├── painel_comite.html       # Dashboard executivo interativo (Chart.js & Design System VTEX)
-├── respostas.md             # Respostas formais com origem, premissas e leitura de negócio (M0 a M5 + V1)
-├── consultas.sql            # Scripts SQL auditados no BigQuery (bigquery-public-data.thelook_ecommerce)
-├── bonus.md                 # Evidências e documentação dos +45 pontos de bônus
-├── reproduzir_painel.py     # Script Python para reprodução ponta a ponta
+├── painel_comite.html          # Dashboard executivo interativo com Abas de Navegação (Módulo M1 Dedicado)
+├── especificacao_tecnica_m1.md # Especificação Técnica formal para o Módulo M1 (Critérios da Banca)
+├── respostas.md                # Respostas formais com origem, premissas e leitura de negócio (M0 a M5 + V1)
+├── consultas.sql               # Scripts SQL auditados no BigQuery (bigquery-public-data.thelook_ecommerce)
+├── bonus.md                    # Evidências e documentação dos +45 pontos de bônus
+├── reproduzir_painel.py        # Script Python para reprodução ponta a ponta
 └── .agents/
-    └── skills/              # Skills VTEX, analista theLook e metodologia do Squad
+    └── skills/                 # Skills VTEX, analista theLook e metodologia do Squad
 ```
 
 ---
 
 ## 🚀 Como Executar
 
-### 1. Visualizar o Painel Executivo
+### 1. Visualizar o Painel Executivo Interativo
 Abra o arquivo `painel_comite.html` diretamente em qualquer navegador moderno ou rode localmente:
 ```bash
 python -m http.server 8080
 # Acesse no navegador: http://localhost:8080/painel_comite.html
 ```
+* **Navegação por Abas:** Alterne entre a **Visão Geral do Comitê** (alocação dos US$ 500k e síntese de todas as missões) e a nova aba dedicada **M1 · Fechamento do Mês & Backtest** para auditar a série temporal dia a dia cortada no dia 17 e a performance do TimesFM vs Média Móvel de 28 Dias.
 
 ### 2. Reproduzir os Cálculos
 Para auditar e recalcular todos os testes estatísticos e simulações financeiras:

@@ -37,3 +37,4 @@ Aplicando o modelo vencedor (TimesFM) na série histórica em D-7:
 
 #### 2.4. Frase Estratégica Pronta para o CFO
 > *"Recomendamos ao conselho o número de fechamento de US$ 1.248.500 baseado no TimesFM, modelo com histórico de acerto superior comprovado em backtest (erro de apenas 2,69% contra 6,69% da média simples), operando em uma faixa de tolerância conservadora entre US$ 1,165M e US$ 1,332M."*
+

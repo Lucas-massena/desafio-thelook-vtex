@@ -26,3 +26,4 @@ Apresentar os números fundamentais da theLook (Receita dos últimos 12 meses, M
 * Custo dos Produtos Vendidos (CPV) retirado de `products.cost`.
 * Margem Bruta apurada de **53,42%** (Lucro Bruto: US$ 6,86M).
 * A categoria *Outerwear & Coats* responde por quase 20% da receita da companhia e tem margem de 51,85%, sendo a principal âncora de faturamento.
+

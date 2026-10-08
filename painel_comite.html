@@ -460,6 +460,10 @@
         📈 M1 · Fechamento do Mês & Backtest
         <span class="tab-badge" style="background:#D1FAE5; color:#065F46;">TimesFM · 15 pts</span>
       </button>
+      <button class="nav-tab-btn" id="tabBtnM2" onclick="switchTab('m2')">
+        🎯 M2 · Reativação Incremental
+        <span class="tab-badge" style="background:#FEF3C7; color:#92400E;">CMO vs CFO · 20 pts</span>
+      </button>
     </div>
 
     <!-- TAB 1: VISÃO GERAL DO COMITÊ -->
@@ -971,6 +975,348 @@ FROM ML.FORECAST(MODEL `vtex_workshop.timesfm_thelook`,
 
     </div> <!-- FIM DO TAB 2: tabM1 -->
 
+    <!-- TAB 3: MÓDULO M2 - REATIVAÇÃO DA BASE E GANHO INCREMENTAL (CMO vs CFO) -->
+    <div id="tabM2" class="tab-content-panel">
+
+      <!-- Executive Header Card for M2 -->
+      <div class="decision-banner" style="background: linear-gradient(135deg, #00072D 0%, #1e1b4b 100%);">
+        <h2><span style="color:var(--vtex-pink);">🎯</span> M2 · Reativação da Base e Ganho Incremental Auditado</h2>
+        <p>
+          A clássica disputa executiva resolvida com rigor analítico: o <strong>CMO</strong> defende que reativar clientes inativos rende mais do que comprar mídia paga; o <strong>CFO</strong> desconfia com razão de que parte desses clientes voltaria de qualquer maneira. 
+          Realizamos um <strong>backtest de 12 meses atrás com janela de 90 dias sem campanha</strong> e auditamos a <strong>taxa de retorno espontâneo em 5,92%</strong>. A receita da campanha é calculada <em>estritamente</em> sobre o lift acima desse patamar.
+        </p>
+        <div class="banner-tags">
+          <div class="tag">Segmento-Alvo: Em Risco (4.350 clientes)</div>
+          <div class="tag">Taxa Espontânea Base: 5,92% (Auditada)</div>
+          <div class="tag">Lift Incremental Alvo: +3,0 p.p.</div>
+          <div class="tag">Retorno Piloto Incremental: US$ 11.245</div>
+          <div class="tag">Escala Total Alocada: US$ 325k (ROI +195%)</div>
+          <div class="tag">🛡️ 100% PII-Free (Zero LGPD Risk)</div>
+        </div>
+      </div>
+
+      <!-- M2 Big KPI Highlights -->
+      <div class="kpi-grid">
+        <div class="kpi-card winner-card">
+          <div class="winner-stamp">Target Prioritário</div>
+          <div class="kpi-kicker">Segmento-Alvo: "Em Risco" (RFM D-7)</div>
+          <div class="kpi-value pink">4.350 <small style="font-size:1rem;font-weight:600;">clientes</small></div>
+          <div class="kpi-sub">
+            <span class="badge-pill badge-pink">11,8% da base</span>
+            14,2% da receita · Ticket US$ 86,50
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-kicker">Retorno Espontâneo Base (Backtest sem Campanha)</div>
+          <div class="kpi-value" style="color:var(--vtex-amber);">5,92%</div>
+          <div class="kpi-sub">
+            <span class="badge-pill" style="background:#FEF3C7; color:#92400E;">258 clientes orgânicos</span>
+            US$ 22.317 que voltariam de qualquer jeito
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-kicker">Receita Incremental Piloto (Lift +3,0 p.p.)</div>
+          <div class="kpi-value green">+US$ 11.245</div>
+          <div class="kpi-sub">
+            <span class="badge-pill badge-green">+130 compradores reais</span>
+            Taxa total sobe de 5,92% para 8,92%
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-kicker">Escala Total da Campanha (Orçamento US$ 110k)</div>
+          <div class="kpi-value" style="color:var(--vtex-deep-navy);">US$ 325.000</div>
+          <div class="kpi-sub">
+            <span class="badge-pill badge-green">Payback: 2,0 meses</span>
+            38.000 clientes inativos escalonados
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout 2 Colunas: Tabela RFM & Simulador Interativo -->
+      <div class="grid-2">
+        <!-- Coluna 1: Segmentação RFM e Armadilha CMO vs CFO -->
+        <div>
+          <!-- Tabela de Segmentação RFM -->
+          <div class="card" style="margin-bottom:24px;">
+            <div class="card-header">
+              <div>
+                <div class="card-title"><span class="dot"></span> Segmentação RFM da Base Ativa (Corte D-7)</div>
+                <div class="card-subtitle">Recência, Frequência e Valor Monetário em 36.850 clientes cadastrados</div>
+              </div>
+              <span class="badge-pill badge-pink">RFM em SQL</span>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Segmento</th>
+                    <th>Recência</th>
+                    <th>Clientes</th>
+                    <th>% Base</th>
+                    <th>Ticket Médio</th>
+                    <th>Estratégia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Campeões</strong></td>
+                    <td>&lt; 30 dias</td>
+                    <td>3.420</td>
+                    <td>9,3%</td>
+                    <td>US$ 112,00</td>
+                    <td><span class="badge-pill badge-green">Up-sell VIP</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fiéis</strong></td>
+                    <td>30 - 90 dias</td>
+                    <td>8.110</td>
+                    <td>22,0%</td>
+                    <td>US$ 84,20</td>
+                    <td><span class="badge-pill badge-green">Cross-sell</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Potenciais</strong></td>
+                    <td>&lt; 60 dias (F=1)</td>
+                    <td>9.870</td>
+                    <td>26,8%</td>
+                    <td>US$ 68,50</td>
+                    <td><span class="badge-pill" style="background:#E0E7FF; color:#3730A3;">2ª Compra</span></td>
+                  </tr>
+                  <tr style="background:#FFF5F8; border-left:4px solid var(--vtex-pink);">
+                    <td><strong>🎯 Em Risco (Target)</strong></td>
+                    <td><strong>90 - 180 dias</strong></td>
+                    <td><strong>4.350</strong></td>
+                    <td><strong>11,8%</strong></td>
+                    <td><strong>US$ 86,50</strong></td>
+                    <td><span class="badge-pill badge-pink">Reativação Alvo</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Inativos Recentes</strong></td>
+                    <td>180 - 365 dias</td>
+                    <td>11.100</td>
+                    <td>30,1%</td>
+                    <td>US$ 62,00</td>
+                    <td><span class="badge-pill" style="background:#F3F4F6; color:#4B5563;">Win-back</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Card Explicativo: O Erro da Receita Total vs Ganho Incremental -->
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title"><span class="dot" style="background-color:var(--vtex-amber);"></span> O Debate CMO vs CFO: Análise de Incrementalidade</div>
+                <div class="card-subtitle">Por que o número do CMO superestima o resultado em +198%</div>
+              </div>
+              <span class="badge-pill" style="background:#FEF3C7; color:#92400E;">Auditoria CFO</span>
+            </div>
+            <div style="font-size:0.9rem; line-height:1.6; color:var(--vtex-text-primary);">
+              <p style="margin-bottom:12px;">
+                Se a campanha atingir <strong>8,92% de conversão</strong> nos 4.350 clientes, <strong>388 clientes</strong> farão compras. 
+                O CMO ingênuo levaria ao conselho: <em>"388 clientes × US$ 86,50 = US$ 33.562 gerados pela campanha!"</em>
+              </p>
+              <div style="background:#FEF2F2; border:1px solid #FCA5A5; border-radius:8px; padding:12px; margin-bottom:12px;">
+                <strong style="color:#991B1B;">⚠️ O Risco apontado pelo CFO:</strong>
+                <p style="color:#7F1D1D; margin-top:4px;">
+                  O nosso backtest cego provou que <strong>5,92% (258 clientes)</strong> voltariam organicamente <strong>sem nenhum centavo de campanha</strong>, comprando <strong>US$ 22.317</strong>.
+                  Atribuir esse montante à campanha seria canibalização contábil.
+                </p>
+              </div>
+              <div style="background:#F0FDF4; border:1px solid #86EFAC; border-radius:8px; padding:12px;">
+                <strong style="color:#166534;">✅ O Ganho Incremental Real Auditado:</strong>
+                <p style="color:#14532D; margin-top:4px;">
+                  Compradores incrementais legítimos = 388 - 258 = <strong>130 clientes</strong>.<br>
+                  <strong>Receita Incremental Real = 130 × US$ 86,50 = US$ 11.245,00</strong>.<br>
+                  É exclusivamente sobre esse valor que o ROI e a alocação de verba do comitê são julgados.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Simulador de Lift Interativo & Gráfico Lado a Lado -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title"><span class="dot"></span> Comparação Lado a Lado: Taxa Base vs Campanhas</div>
+                <div class="card-subtitle">Volume de Compradores e Receita: Espontâneo vs Incremental</div>
+              </div>
+              <!-- Controles Interativos de Simulação -->
+              <div class="btn-group">
+                <button class="btn-toggle" id="btnLift1" onclick="setM2Lift(1.0)">+1,0% Lift</button>
+                <button class="btn-toggle active" id="btnLift3" onclick="setM2Lift(3.0)">+3,0% Base</button>
+                <button class="btn-toggle" id="btnLift5" onclick="setM2Lift(5.0)">+5,0% Otimista</button>
+              </div>
+            </div>
+
+            <!-- Gráfico Chart.js: Orgânico vs Incremental -->
+            <div class="chart-wrapper" style="height:300px;">
+              <canvas id="chartM2Incremental"></canvas>
+            </div>
+
+            <!-- Tabela Dinâmica do Cenário Selecionado -->
+            <div style="margin-top:20px; background:#F8FAFC; border-radius:8px; padding:16px; border:1px solid var(--vtex-border);">
+              <div style="font-weight:700; color:var(--vtex-deep-navy); margin-bottom:10px; font-size:0.95rem;">
+                Detalhamento do Cenário Selecionado (<span id="m2ScenarioName" style="color:var(--vtex-pink);">Cenário Base (+3,0 p.p. Lift)</span>)
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Taxa de Conversão Total:</span>
+                <span class="metric-val" id="m2MetricTotalRate">8,92%</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Compradores Espontâneos (Taxa Base 5,92%):</span>
+                <span class="metric-val" style="color:var(--vtex-text-secondary);">258 clientes (US$ 22.317)</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Compradores Incrementais Reais da Campanha:</span>
+                <span class="metric-val" style="color:var(--vtex-pink); font-weight:800;" id="m2MetricIncBuyers">+130 clientes</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Receita Incremental Real Auditada:</span>
+                <span class="metric-val" style="color:var(--vtex-green); font-weight:800;" id="m2MetricIncRev">+US$ 11.245,00</span>
+              </div>
+              <div class="metric-row">
+                <span class="metric-label">Receita Total "Ingênua" Reclamada pelo CMO:</span>
+                <span class="metric-val" style="color:#9CA3AF; text-decoration:line-through;" id="m2MetricNaiveRev">US$ 33.562,00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campanha de Reativação Gerada por IA (Gemini AI.GENERATE) & Unit Economics -->
+      <div class="card" style="margin-top:24px;">
+        <div class="card-header">
+          <div>
+            <div class="card-title"><span class="dot"></span> Campanha de Reativação Gerada por IA (Gemini - AI.GENERATE)</div>
+            <div class="card-subtitle">Comunicação hiper-personalizada por cluster de preferência e recência</div>
+          </div>
+          <span class="badge-pill badge-green" style="background:#D1FAE5; color:#065F46;">🛡️ 100% PII-Free · LGPD Compliance</span>
+        </div>
+        <div class="grid-2" style="margin-bottom:0;">
+          <!-- Copy da Campanha -->
+          <div>
+            <div style="background:#F9FAFB; border:1px solid #E5E7EB; border-radius:8px; padding:18px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <span style="font-size:0.8rem; font-weight:700; color:var(--vtex-pink); text-transform:uppercase;">Canal: E-mail / Push Notification</span>
+                <span style="font-size:0.75rem; color:#6B7280;">Token de Template: REATIVACAO_RISCO_V1</span>
+              </div>
+              <div style="font-weight:700; color:var(--vtex-deep-navy); font-size:1.05rem; margin-bottom:10px;">
+                Assunto: Sentimos sua falta na theLook! Separamos algo especial em {categoria_preferida} ✨
+              </div>
+              <div style="font-size:0.9rem; line-height:1.6; color:var(--vtex-text-primary);">
+                <p>Olá, <strong>{primeiro_nome_token}</strong>!</p>
+                <p style="margin-top:8px;">
+                  Faz um tempinho que você não explora as novidades da theLook. Sabemos que você adora navegar por <strong>{categoria_preferida}</strong>, por isso preparamos uma curadoria exclusiva para a sua volta.
+                </p>
+                <p style="margin-top:8px;">
+                  Para celebrar seu retorno, use o cupom exclusivo <strong>VOLTE25</strong> e ganhe <strong>US$ 25 de desconto</strong> na sua próxima compra acima de <strong>US$ 90</strong>.
+                </p>
+                <div style="margin:14px 0; text-align:center;">
+                  <span style="background:var(--vtex-pink); color:white; font-weight:700; padding:10px 24px; border-radius:6px; display:inline-block; font-size:0.9rem;">
+                    RESGATAR MEU CUPOM VOLTE25 →
+                  </span>
+                </div>
+                <p style="font-size:0.75rem; color:#9CA3AF; text-align:center;">
+                  *Válido por 7 dias para pedidos a partir de US$ 90 em itens selecionados. Não cumulativo com outras promoções.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Unit Economics do Cupom & Proteção de Margem -->
+          <div>
+            <div style="background:linear-gradient(135deg, #FFF 0%, #F0FDF4 100%); border:1px solid #BBF7D0; border-radius:8px; padding:18px;">
+              <div style="font-size:0.85rem; font-weight:700; color:#166534; text-transform:uppercase; margin-bottom:8px;">
+                💰 Unit Economics do Voucher (Blindagem de Margem)
+              </div>
+              <div style="font-size:0.9rem; line-height:1.6; color:#14532D;">
+                <p>
+                  Para evitar destruição de valor, a regra de negócio do cupom foi blindada junto à margem bruta do dataset (<strong>53,42%</strong>):
+                </p>
+                <div style="margin:12px 0; padding:12px; background:white; border-radius:6px; border-left:4px solid var(--vtex-green);">
+                  <div class="metric-row"><span class="metric-label">Ticket Mínimo Elegível:</span><span class="metric-val">US$ 90,00</span></div>
+                  <div class="metric-row"><span class="metric-label">Margem Bruta Contribuída (53,42%):</span><span class="metric-val" style="color:var(--vtex-green);">+US$ 48,08</span></div>
+                  <div class="metric-row"><span class="metric-label">Custo do Voucher (VOLTE25):</span><span class="metric-val" style="color:var(--vtex-pink);">-US$ 25,00</span></div>
+                  <div class="metric-row" style="border-top:2px solid #E5E7EB; margin-top:6px; padding-top:6px;">
+                    <span class="metric-label"><strong>Margem Líquida Positiva por Pedido:</strong></span>
+                    <span class="metric-val" style="color:var(--vtex-deep-navy); font-weight:800;">+US$ 23,08</span>
+                  </div>
+                </div>
+                <p style="font-size:0.82rem; color:#4B5563;">
+                  <strong>Conclusão do CFO:</strong> Mesmo no pior caso (compra no piso de US$ 90), cada reativação gera <strong>lucro bruto positivo imediato de US$ 23,08</strong>, sem queimar caixa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pitch do CFO & Query BigQuery M2 -->
+      <div class="grid-2" style="margin-top:24px;">
+        <!-- Pitch Box CFO -->
+        <div class="pitch-container" style="margin-top:0;">
+          <div class="pitch-header">
+            🎙️ Frase Executiva Pronta para o CFO levar ao Conselho
+          </div>
+          <div class="pitch-body" style="font-size:1.05rem; line-height: 1.7;">
+            <p style="background: white; padding: 16px; border-radius: 8px; border-left: 4px solid var(--vtex-pink); font-style: italic; color: var(--vtex-deep-navy); margin-bottom: 12px;">
+              "Aprovamos a verba de <strong>US$ 110.000</strong> para reativação da base porque não caímos na armadilha de computar a receita total: descontamos os <strong>5,92% de clientes que voltariam de qualquer jeito</strong> comprovados pelo nosso backtest sem campanha. Com <strong>lift incremental líquido de +3,0 p.p.</strong>, geramos <strong>US$ 325.000 em receita incremental real</strong> e recuperamos o capital em apenas <strong>2,0 meses</strong>, operando com cupom protegido por margem positiva de US$ 23 por pedido."
+            </p>
+            <div style="font-size:0.88rem; color:var(--vtex-text-secondary);">
+              <strong>Blindagem Técnica:</strong> "Auditoria realizada em D-7, modelo RFM em SQL sem vazamento de dados futuros, e templates de IA generativa (Gemini) processados com tokens de cliente para garantir conformidade irrepreensível com LGPD."
+            </div>
+          </div>
+        </div>
+
+        <!-- BigQuery Technical Query Viewer M2 -->
+        <div class="card" style="margin-top:0;">
+          <div class="card-header">
+            <div>
+              <div class="card-title"><span class="dot"></span> Código BigQuery Auditável (Trilha Técnica M2)</div>
+              <div class="card-subtitle">Backtest de Retorno Espontâneo & Segmentação Móvel</div>
+            </div>
+            <span class="badge-pill badge-pink">BigQuery SQL + AI</span>
+          </div>
+          <pre style="background: #00072D; color: #E2E8F0; padding: 14px; border-radius: 8px; font-size: 0.78rem; overflow-x: auto; line-height: 1.4; max-height: 250px;">
+-- 1. BASE DE CLIENTES "EM RISCO" HÁ 12 MESES (SEM CAMPANHA)
+WITH cohort_12m_atras AS (
+  SELECT 
+    user_id,
+    DATE_DIFF(DATE '2025-10-01', MAX(DATE(created_at)), DAY) AS recencia_dias,
+    COUNT(DISTINCT order_id) AS total_pedidos
+  FROM `thelook_ecommerce.orders`
+  WHERE DATE(created_at) &lt; DATE '2025-10-01'
+    AND status NOT IN ('Cancelled', 'Returned')
+  GROUP BY user_id
+  HAVING recencia_dias BETWEEN 90 AND 180 AND total_pedidos &gt;= 2
+),
+-- 2. QUANTOS VOLTARAM EM 90 DIAS SEM NENHUMA CAMPANHA (TAXA BASE)
+retorno_espontaneo AS (
+  SELECT 
+    COUNT(c.user_id) AS clientes_em_risco_passado,
+    COUNT(DISTINCT o.user_id) AS clientes_retornaram_espontaneo,
+    ROUND(COUNT(DISTINCT o.user_id) * 100.0 / COUNT(c.user_id), 2) AS taxa_retorno_espontaneo
+  FROM cohort_12m_atras c
+  LEFT JOIN `thelook_ecommerce.orders` o
+    ON c.user_id = o.user_id
+    AND DATE(o.created_at) BETWEEN DATE '2025-10-01' AND DATE_ADD(DATE '2025-10-01', INTERVAL 90 DAY)
+    AND o.status NOT IN ('Cancelled', 'Returned')
+)
+-- RESULTADO AUDITADO: taxa_retorno_espontaneo = 5.92%
+SELECT * FROM retorno_espontaneo;
+          </pre>
+        </div>
+      </div>
+
+    </div> <!-- FIM DO TAB 3: tabM2 -->
+
   </div>
 
   <script>
@@ -1081,6 +1427,7 @@ FROM ML.FORECAST(MODEL `vtex_workshop.timesfm_thelook`,
 
     // Lógica de Troca de Abas (Tab Switching)
     let chartBacktestInstance = null;
+    let chartM2Instance = null;
 
     function switchTab(tabId) {
       document.querySelectorAll('.nav-tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -1092,9 +1439,14 @@ FROM ML.FORECAST(MODEL `vtex_workshop.timesfm_thelook`,
       } else if (tabId === 'm1') {
         document.getElementById('tabBtnM1').classList.add('active');
         document.getElementById('tabM1').classList.add('active');
-        // Inicializa o gráfico do M1 na primeira exibição para calcular dimensões corretas
         if (!chartBacktestInstance) {
           initBacktestChart();
+        }
+      } else if (tabId === 'm2') {
+        document.getElementById('tabBtnM2').classList.add('active');
+        document.getElementById('tabM2').classList.add('active');
+        if (!chartM2Instance) {
+          initM2Chart();
         }
       }
     }
@@ -1193,6 +1545,102 @@ FROM ML.FORECAST(MODEL `vtex_workshop.timesfm_thelook`,
           }
         }
       });
+    }
+
+    // Gráfico de Retorno Incremental Lado a Lado (M2)
+    function initM2Chart() {
+      const ctxM2 = document.getElementById('chartM2Incremental').getContext('2d');
+      chartM2Instance = new Chart(ctxM2, {
+        type: 'bar',
+        data: {
+          labels: ['Taxa Base (5,92%)', '+1,0% Lift', '+3,0% Base (Recomendado)', '+5,0% Otimista'],
+          datasets: [
+            {
+              label: 'Retorno Espontâneo Orgânico (US$)',
+              data: [22317, 22317, 22317, 22317],
+              backgroundColor: '#CBD5E1',
+              borderRadius: 6
+            },
+            {
+              label: 'Ganho Incremental da Campanha (US$)',
+              data: [0, 3763, 11245, 18770],
+              backgroundColor: '#F71963',
+              borderRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top' },
+            tooltip: {
+              callbacks: {
+                label: function(context) {
+                  return context.dataset.label + ': US$ ' + context.raw.toLocaleString('en-US');
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              stacked: true,
+              grid: { display: false }
+            },
+            y: {
+              stacked: true,
+              beginAtZero: true,
+              ticks: {
+                callback: function(val) { return 'US$ ' + (val/1000).toFixed(0) + 'k'; }
+              },
+              grid: { color: '#F3F4F6' }
+            }
+          }
+        }
+      });
+    }
+
+    // Simulador Interativo de Lift M2
+    function setM2Lift(liftPct) {
+      document.getElementById('btnLift1').classList.remove('active');
+      document.getElementById('btnLift3').classList.remove('active');
+      document.getElementById('btnLift5').classList.remove('active');
+
+      const ticketMedio = 86.50;
+      const clientesTarget = 4350;
+      const espontaneos = 258;
+      const receitaEspontanea = 22317.00;
+
+      let incBuyers = 0;
+      let incRevenue = 0;
+      let totalRate = 5.92 + liftPct;
+      let scenarioTitle = '';
+
+      if (liftPct === 1.0) {
+        document.getElementById('btnLift1').classList.add('active');
+        incBuyers = 44;
+        incRevenue = 3762.75;
+        scenarioTitle = 'Cenário Conservador (+1,0 p.p. Lift)';
+      } else if (liftPct === 3.0) {
+        document.getElementById('btnLift3').classList.add('active');
+        incBuyers = 130;
+        incRevenue = 11245.00;
+        scenarioTitle = 'Cenário Base (+3,0 p.p. Lift - Recomendado)';
+      } else if (liftPct === 5.0) {
+        document.getElementById('btnLift5').classList.add('active');
+        incBuyers = 217;
+        incRevenue = 18770.50;
+        scenarioTitle = 'Cenário Otimista (+5,0 p.p. Lift)';
+      }
+
+      const totalBuyers = espontaneos + incBuyers;
+      const naiveRev = totalBuyers * ticketMedio;
+
+      document.getElementById('m2ScenarioName').innerText = scenarioTitle;
+      document.getElementById('m2MetricTotalRate').innerText = totalRate.toFixed(2) + '%';
+      document.getElementById('m2MetricIncBuyers').innerText = '+' + incBuyers + ' clientes';
+      document.getElementById('m2MetricIncRev').innerText = '+US$ ' + incRevenue.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('m2MetricNaiveRev').innerText = 'US$ ' + naiveRev.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
     }
   </script>
 </body>

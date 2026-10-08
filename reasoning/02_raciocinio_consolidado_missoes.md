@@ -43,3 +43,4 @@
   - Retorno Incremental Líquido: **US$ 1.285.000,00** (+157% ROI Líquido).
   - Payback Médio Ponderado: **2,38 meses** (meta batida).
   - No cenário de estresse severo (-30% lift e CAC inflacionado), o projeto ainda retorna **US$ 895.000,00** e payback de 3,4 meses.
+

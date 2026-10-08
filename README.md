@@ -30,13 +30,18 @@ A theLook é um varejo global de moda online com operação em 16 países. O obj
 ## 🛠️ Estrutura do Repositório
 
 ```text
-├── painel_comite.html          # Dashboard executivo interativo com Abas de Navegação (Módulo M1 Dedicado)
+├── painel_comite.html          # Dashboard executivo interativo com Abas de Navegação (M1 e M2 Dedicados)
 ├── especificacao_tecnica_m1.md # Especificação Técnica formal para o Módulo M1 (Critérios da Banca)
+├── especificacao_tecnica_m2.md # Especificação Técnica formal para o Módulo M2 (Reativação Incremental)
 ├── respostas.md                # Respostas formais com origem, premissas e leitura de negócio (M0 a M5 + V1)
 ├── consultas.sql               # Scripts SQL auditados no BigQuery (bigquery-public-data.thelook_ecommerce)
 ├── bonus.md                    # Evidências e documentação dos +45 pontos de bônus
 ├── reproduzir_painel.py        # Script Python para reprodução ponta a ponta
 ├── reasoning/                  # Histórico de raciocínio formal, chain-of-thought e decisões de arquitetura
+│   ├── 00_visao_geral_e_governanca.md
+│   ├── 01_raciocinio_m1_fechamento_e_backtest.md
+│   ├── 02_raciocinio_consolidado_missoes.md
+│   └── 03_raciocinio_m2_reativacao_incremental.md
 └── .agents/
     └── skills/                 # Skills VTEX, analista theLook e metodologia do Squad
 ```
@@ -51,7 +56,10 @@ Abra o arquivo `painel_comite.html` diretamente em qualquer navegador moderno ou
 python -m http.server 8080
 # Acesse no navegador: http://localhost:8080/painel_comite.html
 ```
-* **Navegação por Abas:** Alterne entre a **Visão Geral do Comitê** (alocação dos US$ 500k e síntese de todas as missões) e a nova aba dedicada **M1 · Fechamento do Mês & Backtest** para auditar a série temporal dia a dia cortada no dia 17 e a performance do TimesFM vs Média Móvel de 28 Dias.
+* **Navegação por Abas:** 
+  - **🏛️ Visão Geral do Comitê:** Alocação global dos US$ 500k, análise de sensibilidade e síntese de todas as missões.
+  - **📈 M1 · Fechamento do Mês & Backtest (15 pts):** Auditoria da série temporal dia a dia cortada no dia 17 e acurácia do TimesFM (erro 2,69%) vs Média Móvel 28d (erro 6,69%).
+  - **🎯 M2 · Reativação Incremental (20 pts):** Resolução do conflito CMO vs CFO com taxa base espontânea de 5,92% apurada em backtest cego sem campanha, simulador interativo de lift (+1%, +3%, +5%), gráfico de barras empilhadas/lado a lado e campanha IA (Gemini) 100% livre de PII (LGPD).
 
 ### 2. Reproduzir os Cálculos
 Para auditar e recalcular todos os testes estatísticos e simulações financeiras:

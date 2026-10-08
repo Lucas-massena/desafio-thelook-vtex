@@ -36,6 +36,7 @@ A theLook é um varejo global de moda online com operação em 16 países. O obj
 ├── consultas.sql               # Scripts SQL auditados no BigQuery (bigquery-public-data.thelook_ecommerce)
 ├── bonus.md                    # Evidências e documentação dos +45 pontos de bônus
 ├── reproduzir_painel.py        # Script Python para reprodução ponta a ponta
+├── reasoning/                  # Histórico de raciocínio formal, chain-of-thought e decisões de arquitetura
 └── .agents/
     └── skills/                 # Skills VTEX, analista theLook e metodologia do Squad
 ```
